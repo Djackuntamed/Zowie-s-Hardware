@@ -15,10 +15,9 @@
   const themeToggle  = document.getElementById('theme-toggle');
   const themeIcon    = themeToggle?.querySelector('.theme-icon');
 
-  // Load saved preference; fall back to OS preference
+  // Load saved preference; default is always light
   const savedTheme = localStorage.getItem('zowie-theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  let currentTheme  = savedTheme || (prefersDark ? 'dark' : 'light');
+  let currentTheme  = savedTheme || 'light';
 
   function applyTheme(theme) {
     htmlEl.setAttribute('data-theme', theme);

@@ -1,0 +1,970 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Zowie's Hardware — your trusted local hardware store for building materials, tools, paint, and more." />
+    <title>Zowie's Hardware | Availing Cheap And Viable Building Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <!-- Utility bar -->
+    <div class="utility-bar">
+      <p>Free Around-Kampala Delivery on orders over 10M &nbsp;|&nbsp; Open 7 days a week</p>
+      <div class="utility-bar-right">
+        <a href="#tab-home" data-tab="home">Call Store<span>↗</span></a>
+        <!-- Dark / Light toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" title="Toggle dark/light mode">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Site header -->
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Zowie's Hardware home">
+        <span class="brand-mark">Z</span>
+        <span>ZOWIE'S<small>HARDWARE</small></span>
+      </a>
+
+      <!-- Tab navigation -->
+      <nav class="tab-nav" aria-label="Main tabs">
+        <button class="tab-btn active" data-tab="home" aria-selected="true" role="tab"> Home</button>
+        <button class="tab-btn" data-tab="instore" aria-selected="false" role="tab"> In Store</button>
+        <button class="tab-btn" data-tab="listItems" aria-selected="false" role="tab"> List Your Items</button>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-button" id="cart-button" aria-label="Shopping cart, 0 items">
+          🛒 Cart <span class="cart-count" aria-hidden="true">0</span>
+        </button>
+        <button class="menu-button" id="menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger-icon" aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ── Mobile nav overlay (backdrop) ──────────────────────── -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+
+    <!-- ── Mobile nav drawer ──────────────────────────────────── -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+      <div class="mobile-nav-header">
+        <a class="brand" href="#" aria-label="Zowie's Hardware home">
+          <span class="brand-mark">Z</span>
+          <span>ZOWIE'S<small>HARDWARE</small></span>
+        </a>
+        <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">✕</button>
+      </div>
+      <div class="mobile-nav-tabs">
+        <button class="mobile-tab-btn active" data-tab="home">🏠 Home</button>
+        <button class="mobile-tab-btn" data-tab="instore">🛒 In Store</button>
+        <button class="mobile-tab-btn" data-tab="listItems">📋 List Your Items</button>
+      </div>
+      <div class="mobile-nav-divider"></div>
+      <div class="mobile-nav-footer">
+        <p>📞 <a href="tel:+27110001111">011 000 1111</a></p>
+        <p>💬 <button class="inline-chat-btn open-chat-btn">Chat on WhatsApp</button></p>
+        <p>⏰ Open 7 days &nbsp;|&nbsp; 7AM – 6PM</p>
+      </div>
+    </nav>
+
+    <!-- ── Mobile tab bar (shown below header on phones/tablets) ─ -->
+    <div class="mobile-tab-bar" role="tablist" aria-label="Main tabs">
+      <button class="tab-btn active" data-tab="home" aria-selected="true" role="tab">🏠 Home</button>
+      <button class="tab-btn" data-tab="instore" aria-selected="false" role="tab">🛒 In Store</button>
+      <button class="tab-btn" data-tab="listItems" aria-selected="false" role="tab">📋 List</button>
+    </div>
+
+    <!-- Accessible live region -->
+    <span id="cart-live" class="sr-only" aria-live="polite" aria-atomic="true"></span>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  TAB: HOME                                                 -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <main id="main-content">
+
+      <section id="tab-home" class="tab-panel active" role="tabpanel" aria-label="Home">
+
+        <!-- Hero -->
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Your pocket friendly hardware dealer and more</p>
+            <h1>Building Materials<br /><em>Builders' tools & more</em></h1>
+            <p class="hero-text">From a quick fix to a full build — get the materials, tools, and know-how to make it happen. Zowie's Hardware has been serving the community with quality products and expert advice for over 20 years.</p>
+            <div class="hero-actions">
+              <button class="button button-dark tab-jump" data-tab="instore">Shop now <span>→</span></button>
+              <button class="button button-outline tab-jump" data-tab="listItems">Get a quote <span>↗</span></button>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="sun" aria-hidden="true"></div>
+            <img
+              src="https://images.unsplash.com/photo-1581147036324-c1c9239641d7?auto=format&fit=crop&w=1200&q=85"
+              alt="Hand tools hanging on a workshop wall"
+              loading="eager"
+              width="1200"
+              height="800"
+            />
+            <div class="hero-badge" aria-label="Open 7 days, 7AM to 6PM">
+              <strong>OPEN<br />7 DAYS</strong>
+              <span>7AM–6PM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust strip -->
+        <div class="trust-strip" aria-label="Why choose us">
+          <div>
+            <span class="trust-icon" aria-hidden="true">🏗️</span>
+            <p><strong>Quality Products</strong><br />Top-grade materials &amp; tools</p>
+          </div>
+          <div>
+            <span class="trust-icon" aria-hidden="true">🧑‍🔧</span>
+            <p><strong>Expert Staff</strong><br />Advice for any project</p>
+          </div>
+          <div>
+            <span class="trust-icon" aria-hidden="true">🚚</span>
+            <p><strong>Local Delivery</strong><br />Fast and affordable</p>
+          </div>
+          <div>
+            <span class="trust-icon" aria-hidden="true">💬</span>
+            <p><strong>Always Available</strong><br />Chat with us on WhatsApp</p>
+          </div>
+        </div>
+
+        <!-- About the Store -->
+        <section class="about-section" id="about">
+          <div class="about-grid">
+            <div class="about-copy">
+              <p class="eyebrow">About Zowie's Hardware</p>
+              <h2>More than just<br />a hardware store.</h2>
+              <p>With over 5 years experience in Hardware sourcing, availing and delivery, Zowie's Hardware has grown from a small corner shop into the region's most trusted hardware destination. We stock everything from single nails to full construction material orders, and our team is always ready to help you plan your next project.</p>
+              <p>Whether you're a professional contractor, a Handy home individual, or tackling your first repair — we've got you covered. Visit us in store or chat with us online.</p>
+              <div class="about-stats">
+                <div><strong>Over 5</strong><span>Years experience</span></div>
+                <div><strong>1000+</strong><span>Products in stock</span></div>
+                <div><strong>Accessible</strong><span>Store location</span></div>
+              </div>
+            </div>
+            <div class="about-image">
+              <img
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=85"
+                alt="Hardware store shelves stocked with materials"
+                loading="lazy"
+                width="900"
+                height="600"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services-section" id="services">
+          <div class="section-heading-center">
+            <p class="eyebrow">What we offer</p>
+            <h2>Services &amp; Expertise</h2>
+          </div>
+          <div class="services-grid">
+            <div class="service-card">
+              <span class="service-icon">⚙️</span>
+              <h3>Building Tools & Accesories</h3>
+              <p>Iquire about building tools attainement, usage, maintenance & replacement/ repair.</p>
+            </div>
+            <div class="service-card">
+              <span class="service-icon">🎨</span>
+              <h3>Paint Mixing</h3>
+              <p>Any color, any brand — custom paint mixed while you wait.</p>
+            </div>
+            <div class="service-card">
+              <span class="service-icon">🔑</span>
+              <h3>Cost-Comparative inquiry</h3>
+              <p>Availing you with alternative products information for comparison.</p>
+            </div>
+            <div class="service-card">
+              <span class="service-icon">📐</span>
+              <h3>Project Planning</h3>
+              <p>Free in-store consultations to help you plan and estimate your build.</p>
+            </div>
+            <div class="service-card">
+              <span class="service-icon">🪚</span>
+              <h3>Material Cutting</h3>
+              <p>We cut timber, boards, and pipes to your specifications.</p>
+            </div>
+            <div class="service-card">
+              <span class="service-icon">🚚</span>
+              <h3>Bulk Delivery</h3>
+              <p>Same-day and next-day delivery for large material orders.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Management / Staff -->
+        <section class="staff-section" id="staff">
+          <div class="section-heading-center">
+            <p class="eyebrow">Our people</p>
+            <h2>Management &amp; Staff</h2>
+            <p class="section-sub">The dedicated team behind Zowie's Hardware</p>
+          </div>
+          <div class="staff-grid">
+            <div class="staff-card">
+              <div class="staff-avatar" aria-hidden="true">👨‍💼</div>
+              <h3>Zowie Printessa</h3>
+              <p class="staff-role">Founder &amp; Managing Director</p>
+              <p>20+ years of hardware expertise. Zowie built this store from the ground up with a passion for quality and community service.</p>
+            </div>
+            <div class="staff-card">
+              <div class="staff-avatar" aria-hidden="true">👩‍💼</div>
+              <h3>Agaba Jack</h3>
+              <p class="staff-role">Store Manager</p>
+              <p>Expert in inventory and customer service. He ensures every visit to Zowie's Hardware is a great experience.</p>
+            </div>
+            <div class="staff-card">
+              <div class="staff-avatar" aria-hidden="true">👨‍🔧</div>
+              <h3>Eng. Kampala Yonna</h3>
+              <p class="staff-role">Senior Technical Advisor</p>
+              <p>A qualified builder with 15 years on site. Sipho guides customers through complex material selections and project planning.</p>
+            </div>
+            <div class="staff-card">
+              <div class="staff-avatar" aria-hidden="true">👩‍🔧</div>
+              <h3>Musizi wa Langi</h3>
+              <p class="staff-role">Paint &amp; Finishes Specialist</p>
+              <p>Is your go-to for paint selection, surface prep advice, and color mixing.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact & Locations -->
+        <section class="contact-section" id="contact">
+          <div class="section-heading-center">
+            <p class="eyebrow">Get in touch</p>
+            <h2>Find Us</h2>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-card">
+              <h3>📍 Main Store</h3>
+              <p>Hardware Complex<br />Zana, Entebbe Road</p>
+              <p>📞 <a href="tel:+27110001111">011 000 1111</a></p>
+              <p>⏰ Mon–Fri: 7AM–6PM | Sat–Sun: 8AM–5PM</p>
+            </div>
+            <div class="contact-card">
+              <h3>Dealer 1</h3>
+              <p>45 Hardware Road<br />Kampala, Uganda</p>
+              <p>📞 <a href="tel:+27120002222">012 000 2222</a></p>
+              <p>⏰ Mon–Fri: 7AM–6PM | Sat: 8AM–4PM</p>
+            </div>
+            <div class="contact-card">
+              <h3>Dealer 2</h3>
+              <p>Ruhandiika St,<br />FortPortal, Uganda</p>
+              <p>📞 <a href="tel:+27110003333">011 000 3333</a></p>
+              <p>⏰ Mon–Fri: 7AM–5PM | Sat: 8AM–3PM</p>
+            </div>
+            <div class="contact-card contact-card-highlight">
+              <h3>💬 Chat With Us</h3>
+              <p>Reach our team instantly on WhatsApp for quotes, availability, and orders.</p>
+              <button class="button button-whatsapp open-chat-btn" aria-label="Open WhatsApp chat">
+                <span>📱</span> Chat on WhatsApp
+              </button>
+              <p class="contact-small">Or email us: <a href="mailto:info@zowieshardware.co.za">info@zowieshardware.co.ug</a></p>
+            </div>
+          </div>
+        </section>
+
+      </section><!-- /tab-home -->
+
+
+      <!-- ══════════════════════════════════════════════════════════ -->
+      <!--  TAB: IN STORE                                             -->
+      <!-- ══════════════════════════════════════════════════════════ -->
+      <section id="tab-instore" class="tab-panel" role="tabpanel" aria-label="In Store" hidden>
+
+        <div class="instore-header">
+          <div>
+            <p class="eyebrow">Available Products</p>
+            <h2>In Store</h2>
+          </div>
+          <div class="instore-search-wrap">
+            <label class="sr-only" for="store-search">Search products</label>
+            <input id="store-search" type="search" class="store-search-input" placeholder="Search for a product…" autocomplete="off" />
+            <span class="search-icon" aria-hidden="true">🔍</span>
+          </div>
+        </div>
+
+        <!-- No results notice -->
+        <div id="store-no-results" class="no-results-banner" hidden>
+          <p>😕 <strong>No items found</strong> matching your search in our catalogue.<br />
+          Please <a href="tel:+27110001111">call us</a> or
+          <button class="inline-chat-btn open-chat-btn">Ask us on WhatsApp</button>
+          to check availability or place a specific order.</p>
+        </div>
+
+        <!-- Category filter pills -->
+        <div class="category-pills" role="group" aria-label="Filter by category">
+          <button class="pill active" data-filter="all">All</button>
+          <button class="pill" data-filter="building-materials">Building Materials</button>
+          <button class="pill" data-filter="builders-tools">Builders' Tools</button>
+          <button class="pill" data-filter="paint-supplies">Paint &amp; Supplies</button>
+          <button class="pill" data-filter="plumbing">Plumbing</button>
+          <button class="pill" data-filter="electrical">Electrical</button>
+          <button class="pill" data-filter="garden-outdoor">Garden &amp; Outdoor</button>
+          <button class="pill" data-filter="safety">Safety &amp; PPE</button>
+          <button class="pill" data-filter="fasteners">Fasteners &amp; Fixings</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="product-grid" role="list">
+
+          <!-- ── BUILDING MATERIALS ───────────────────────────── -->
+          <div class="product-card" data-category="building-materials" data-name="cement bag 50kg" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🧱</div>
+            <div class="product-info">
+              <span class="product-cat">Building Materials</span>
+              <h3>Cement Bag 50kg</h3>
+              <p>General purpose Portland cement. Suitable for concrete, mortar, and plaster.</p>
+              <p class="product-price">R<span class="price-value">89</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Cement Bag 50kg" data-price="89" aria-label="Add Cement Bag 50kg to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="building-materials" data-name="river sand 50kg" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">⛱️</div>
+            <div class="product-info">
+              <span class="product-cat">Building Materials</span>
+              <h3>River Sand 50kg</h3>
+              <p>Fine river sand for mixing concrete and mortar. Clean and washed.</p>
+              <p class="product-price">R<span class="price-value">45</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="River Sand 50kg" data-price="45" aria-label="Add River Sand 50kg to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="building-materials" data-name="building bricks pack of 10" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🧱</div>
+            <div class="product-info">
+              <span class="product-cat">Building Materials</span>
+              <h3>Building Bricks (Pack of 10)</h3>
+              <p>Standard clay face bricks, suitable for structural walls and landscaping.</p>
+              <p class="product-price">R<span class="price-value">55</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Building Bricks (Pack of 10)" data-price="55" aria-label="Add Building Bricks to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="building-materials" data-name="plaster sand 40kg" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🏗️</div>
+            <div class="product-info">
+              <span class="product-cat">Building Materials</span>
+              <h3>Plaster Sand 40kg</h3>
+              <p>Fine-grade plastering sand for smooth wall and ceiling finishes.</p>
+              <p class="product-price">R<span class="price-value">38</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Plaster Sand 40kg" data-price="38" aria-label="Add Plaster Sand 40kg to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="building-materials" data-name="timber pine plank 2.4m" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🪵</div>
+            <div class="product-info">
+              <span class="product-cat">Building Materials</span>
+              <h3>Pine Plank 2.4m</h3>
+              <p>Structural pine plank 38×114mm, ideal for framing and general construction.</p>
+              <p class="product-price">R<span class="price-value">72</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Pine Plank 2.4m" data-price="72" aria-label="Add Pine Plank to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="building-materials" data-name="corrugated iron sheet roofing" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🏠</div>
+            <div class="product-info">
+              <span class="product-cat">Building Materials</span>
+              <h3>Corrugated Iron Sheet 1.8m</h3>
+              <p>Galvanised corrugated iron roofing sheet. 0.3mm thickness, 1.8m length.</p>
+              <p class="product-price">R<span class="price-value">145</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Corrugated Iron Sheet 1.8m" data-price="145" aria-label="Add Iron Sheet to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="building-materials" data-name="pvc pipe 3m" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🔧</div>
+            <div class="product-info">
+              <span class="product-cat">Building Materials</span>
+              <h3>PVC Pipe 3m (110mm)</h3>
+              <p>Heavy-duty PVC sewer pipe 110mm diameter, 3m length. Class 34.</p>
+              <p class="product-price">R<span class="price-value">185</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="PVC Pipe 3m (110mm)" data-price="185" aria-label="Add PVC Pipe to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="building-materials" data-name="concrete blocks hollow" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🧱</div>
+            <div class="product-info">
+              <span class="product-cat">Building Materials</span>
+              <h3>Hollow Concrete Blocks (Each)</h3>
+              <p>Standard 390×190×190mm hollow concrete masonry block.</p>
+              <p class="product-price">R<span class="price-value">18</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Hollow Concrete Block" data-price="18" aria-label="Add Concrete Block to cart">Add to Cart +</button>
+          </div>
+
+          <!-- ── BUILDERS' TOOLS ─────────────────────────────────── -->
+          <div class="product-card" data-category="builders-tools" data-name="claw hammer" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🔨</div>
+            <div class="product-info">
+              <span class="product-cat">Builders' Tools</span>
+              <h3>Claw Hammer 450g</h3>
+              <p>Heavy-duty steel claw hammer with rubber grip handle. 450g head weight.</p>
+              <p class="product-price">R<span class="price-value">129</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Claw Hammer 450g" data-price="129" aria-label="Add Claw Hammer to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="builders-tools" data-name="hand saw 500mm" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🪚</div>
+            <div class="product-info">
+              <span class="product-cat">Builders' Tools</span>
+              <h3>Hand Saw 500mm</h3>
+              <p>Hardpoint hand saw with 7 TPI. Cuts timber, boards, and softwood.</p>
+              <p class="product-price">R<span class="price-value">149</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Hand Saw 500mm" data-price="149" aria-label="Add Hand Saw to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="builders-tools" data-name="hacksaw frame and blade" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🔧</div>
+            <div class="product-info">
+              <span class="product-cat">Builders' Tools</span>
+              <h3>Hacksaw Frame &amp; Blade</h3>
+              <p>Adjustable hacksaw frame 300mm with 24 TPI bi-metal blade. Cuts metal and pipe.</p>
+              <p class="product-price">R<span class="price-value">89</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Hacksaw Frame &amp; Blade" data-price="89" aria-label="Add Hacksaw to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="builders-tools" data-name="spirit level 600mm" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">📏</div>
+            <div class="product-info">
+              <span class="product-cat">Builders' Tools</span>
+              <h3>Spirit Level 600mm</h3>
+              <p>Aluminium spirit level with 3 vials for horizontal, vertical, and 45° checks.</p>
+              <p class="product-price">R<span class="price-value">175</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Spirit Level 600mm" data-price="175" aria-label="Add Spirit Level to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="builders-tools" data-name="tape measure 5m" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">📐</div>
+            <div class="product-info">
+              <span class="product-cat">Builders' Tools</span>
+              <h3>Tape Measure 5m</h3>
+              <p>Auto-lock 5m steel tape measure with magnetic end hook. Belt clip included.</p>
+              <p class="product-price">R<span class="price-value">65</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Tape Measure 5m" data-price="65" aria-label="Add Tape Measure to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="builders-tools" data-name="brick trowel" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🧰</div>
+            <div class="product-info">
+              <span class="product-cat">Builders' Tools</span>
+              <h3>Brick Trowel 280mm</h3>
+              <p>High-carbon steel brick trowel with hardwood handle. 280mm blade.</p>
+              <p class="product-price">R<span class="price-value">95</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Brick Trowel 280mm" data-price="95" aria-label="Add Brick Trowel to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="builders-tools" data-name="wheelbarrow 65 litre" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🛒</div>
+            <div class="product-info">
+              <span class="product-cat">Builders' Tools</span>
+              <h3>Wheelbarrow 65L</h3>
+              <p>Heavy-duty steel 65 litre construction wheelbarrow with pneumatic tyre.</p>
+              <p class="product-price">R<span class="price-value">699</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Wheelbarrow 65L" data-price="699" aria-label="Add Wheelbarrow to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="builders-tools" data-name="screwdriver set flat phillips" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🪛</div>
+            <div class="product-info">
+              <span class="product-cat">Builders' Tools</span>
+              <h3>Screwdriver Set (6pc)</h3>
+              <p>6-piece set with flat and Phillips heads in assorted sizes. Ergonomic handles.</p>
+              <p class="product-price">R<span class="price-value">119</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Screwdriver Set (6pc)" data-price="119" aria-label="Add Screwdriver Set to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="builders-tools" data-name="angle grinder 115mm" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">⚙️</div>
+            <div class="product-info">
+              <span class="product-cat">Builders' Tools</span>
+              <h3>Angle Grinder 115mm</h3>
+              <p>850W electric angle grinder with safety guard and side handle. Disc included.</p>
+              <p class="product-price">R<span class="price-value">549</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Angle Grinder 115mm" data-price="549" aria-label="Add Angle Grinder to cart">Add to Cart +</button>
+          </div>
+
+          <!-- ── PAINT & SUPPLIES ──────────────────────────────────── -->
+          <div class="product-card" data-category="paint-supplies" data-name="interior wall paint white 5l" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🎨</div>
+            <div class="product-info">
+              <span class="product-cat">Paint &amp; Supplies</span>
+              <h3>Interior Wall Paint White 5L</h3>
+              <p>Premium washable interior emulsion paint. White base, excellent coverage.</p>
+              <p class="product-price">R<span class="price-value">279</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Interior Wall Paint White 5L" data-price="279" aria-label="Add Wall Paint to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="paint-supplies" data-name="exterior masonry paint 20l" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🏠</div>
+            <div class="product-info">
+              <span class="product-cat">Paint &amp; Supplies</span>
+              <h3>Exterior Masonry Paint 20L</h3>
+              <p>Weather-resistant exterior paint with fungicidal protection. Various colors available.</p>
+              <p class="product-price">R<span class="price-value">749</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Exterior Masonry Paint 20L" data-price="749" aria-label="Add Exterior Paint to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="paint-supplies" data-name="paint roller set" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🖌️</div>
+            <div class="product-info">
+              <span class="product-cat">Paint &amp; Supplies</span>
+              <h3>Paint Roller Set 230mm</h3>
+              <p>9-inch roller frame with 2 medium-pile sleeves, paint tray, and frame.</p>
+              <p class="product-price">R<span class="price-value">89</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Paint Roller Set 230mm" data-price="89" aria-label="Add Paint Roller to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="paint-supplies" data-name="primer sealer 5l" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🖌️</div>
+            <div class="product-info">
+              <span class="product-cat">Paint &amp; Supplies</span>
+              <h3>Primer Sealer 5L</h3>
+              <p>Multi-surface alkali-resistant primer sealer. Use before topcoats on new plaster.</p>
+              <p class="product-price">R<span class="price-value">195</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Primer Sealer 5L" data-price="195" aria-label="Add Primer to cart">Add to Cart +</button>
+          </div>
+
+          <!-- ── FASTENERS & FIXINGS ───────────────────────────────── -->
+          <div class="product-card" data-category="fasteners" data-name="nails assorted box 500g" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">📦</div>
+            <div class="product-info">
+              <span class="product-cat">Fasteners &amp; Fixings</span>
+              <h3>Nails Assorted Box 500g</h3>
+              <p>Assorted round-head wire nails in 500g box. Sizes 25mm, 38mm, 50mm, 75mm.</p>
+              <p class="product-price">R<span class="price-value">49</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Nails Assorted Box 500g" data-price="49" aria-label="Add Nails to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="fasteners" data-name="screws wood box 200pc" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🔩</div>
+            <div class="product-info">
+              <span class="product-cat">Fasteners &amp; Fixings</span>
+              <h3>Wood Screws Box (200pc)</h3>
+              <p>Countersunk wood screws 4×40mm, 200 pieces per box. Yellow zinc plated.</p>
+              <p class="product-price">R<span class="price-value">65</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Wood Screws Box (200pc)" data-price="65" aria-label="Add Wood Screws to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="fasteners" data-name="anchor bolts rawl plugs pack" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🔩</div>
+            <div class="product-info">
+              <span class="product-cat">Fasteners &amp; Fixings</span>
+              <h3>Rawl Plugs &amp; Anchors Pack</h3>
+              <p>100-piece assorted wall plugs and anchors for masonry, drywall, and tile.</p>
+              <p class="product-price">R<span class="price-value">55</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Rawl Plugs &amp; Anchors Pack" data-price="55" aria-label="Add Rawl Plugs to cart">Add to Cart +</button>
+          </div>
+
+          <!-- ── PLUMBING ──────────────────────────────────────────── -->
+          <div class="product-card" data-category="plumbing" data-name="basin tap chrome" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🚰</div>
+            <div class="product-info">
+              <span class="product-cat">Plumbing</span>
+              <h3>Basin Tap Chrome (Pair)</h3>
+              <p>Chrome pillar taps for basin. 1/2" inlet, ceramic disc cartridge.</p>
+              <p class="product-price">R<span class="price-value">249</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Basin Tap Chrome (Pair)" data-price="249" aria-label="Add Basin Taps to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="plumbing" data-name="ball valve 15mm" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">⚙️</div>
+            <div class="product-info">
+              <span class="product-cat">Plumbing</span>
+              <h3>Ball Valve 15mm</h3>
+              <p>Brass full-bore ball valve 15mm (1/2"). For water shut-off applications.</p>
+              <p class="product-price">R<span class="price-value">65</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Ball Valve 15mm" data-price="65" aria-label="Add Ball Valve to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="plumbing" data-name="flexi hose 300mm" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🔧</div>
+            <div class="product-info">
+              <span class="product-cat">Plumbing</span>
+              <h3>Flexi Hose 300mm</h3>
+              <p>Braided stainless flexi hose 300mm 3/8" female×female. For basin and toilet.</p>
+              <p class="product-price">R<span class="price-value">45</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Flexi Hose 300mm" data-price="45" aria-label="Add Flexi Hose to cart">Add to Cart +</button>
+          </div>
+
+          <!-- ── ELECTRICAL ───────────────────────────────────────── -->
+          <div class="product-card" data-category="electrical" data-name="extension cord 5m" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🔌</div>
+            <div class="product-info">
+              <span class="product-cat">Electrical</span>
+              <h3>Extension Cord 5m</h3>
+              <p>4-way surge-protected extension cord, 5m cable. South African plug (Type M).</p>
+              <p class="product-price">R<span class="price-value">189</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Extension Cord 5m" data-price="189" aria-label="Add Extension Cord to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="electrical" data-name="light switch single" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">💡</div>
+            <div class="product-info">
+              <span class="product-cat">Electrical</span>
+              <h3>Light Switch Single (Surface)</h3>
+              <p>Single surface-mount light switch 10A. White. Suitable for indoor use.</p>
+              <p class="product-price">R<span class="price-value">35</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Light Switch Single" data-price="35" aria-label="Add Light Switch to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="electrical" data-name="led bulb 9w e27" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">💡</div>
+            <div class="product-info">
+              <span class="product-cat">Electrical</span>
+              <h3>LED Bulb 9W E27</h3>
+              <p>Energy-saving 9W LED bulb, E27 base, 6500K cool white. 800 lumen output.</p>
+              <p class="product-price">R<span class="price-value">29</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="LED Bulb 9W E27" data-price="29" aria-label="Add LED Bulb to cart">Add to Cart +</button>
+          </div>
+
+          <!-- ── GARDEN & OUTDOOR ────────────────────────────────── -->
+          <div class="product-card" data-category="garden-outdoor" data-name="garden fork" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🌿</div>
+            <div class="product-info">
+              <span class="product-cat">Garden &amp; Outdoor</span>
+              <h3>Garden Fork</h3>
+              <p>4-tine digging fork with ash handle. Ideal for turning soil and composting.</p>
+              <p class="product-price">R<span class="price-value">189</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Garden Fork" data-price="189" aria-label="Add Garden Fork to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="garden-outdoor" data-name="garden spade" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🌱</div>
+            <div class="product-info">
+              <span class="product-cat">Garden &amp; Outdoor</span>
+              <h3>Garden Spade</h3>
+              <p>Long-handle digging spade with steel head and D-grip. For all soil types.</p>
+              <p class="product-price">R<span class="price-value">175</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Garden Spade" data-price="175" aria-label="Add Garden Spade to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="garden-outdoor" data-name="garden hose 20m" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">💧</div>
+            <div class="product-info">
+              <span class="product-cat">Garden &amp; Outdoor</span>
+              <h3>Garden Hose 20m</h3>
+              <p>Reinforced 20m garden hose with spray nozzle and tap connector. Kink-resistant.</p>
+              <p class="product-price">R<span class="price-value">259</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Garden Hose 20m" data-price="259" aria-label="Add Garden Hose to cart">Add to Cart +</button>
+          </div>
+
+          <!-- ── SAFETY & PPE ─────────────────────────────────────── -->
+          <div class="product-card" data-category="safety" data-name="safety helmet hard hat" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">⛑️</div>
+            <div class="product-info">
+              <span class="product-cat">Safety &amp; PPE</span>
+              <h3>Safety Helmet / Hard Hat</h3>
+              <p>SABS-approved hard hat with 6-point harness. UV-stabilised ABS shell.</p>
+              <p class="product-price">R<span class="price-value">89</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Safety Helmet / Hard Hat" data-price="89" aria-label="Add Hard Hat to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="safety" data-name="safety gloves work" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">🧤</div>
+            <div class="product-info">
+              <span class="product-cat">Safety &amp; PPE</span>
+              <h3>Work Safety Gloves</h3>
+              <p>Anti-slip leather palm work gloves, reinforced fingers. Sizes S–XL.</p>
+              <p class="product-price">R<span class="price-value">45</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Work Safety Gloves" data-price="45" aria-label="Add Safety Gloves to cart">Add to Cart +</button>
+          </div>
+
+          <div class="product-card" data-category="safety" data-name="safety boots steel toe" role="listitem">
+            <div class="product-badge">In Stock</div>
+            <div class="product-emoji" aria-hidden="true">👢</div>
+            <div class="product-info">
+              <span class="product-cat">Safety &amp; PPE</span>
+              <h3>Safety Boots (Steel Toe)</h3>
+              <p>SABS-approved steel-toe safety boots with anti-slip sole. Sizes 5–12.</p>
+              <p class="product-price">R<span class="price-value">399</span>.00</p>
+            </div>
+            <button class="add-to-cart-btn" data-name="Safety Boots (Steel Toe)" data-price="399" aria-label="Add Safety Boots to cart">Add to Cart +</button>
+          </div>
+
+        </div><!-- /product-grid -->
+
+        <!-- View Cart button (floating) -->
+        <div class="view-cart-bar" id="view-cart-bar" hidden>
+          <button class="button button-dark" id="view-cart-btn">
+            🛒 View Cart (<span id="cart-bar-count">0</span> items — R<span id="cart-bar-total">0</span>)
+          </button>
+        </div>
+
+      </section><!-- /tab-instore -->
+
+
+      <!-- ══════════════════════════════════════════════════════════ -->
+      <!--  TAB: LIST YOUR ITEMS                                      -->
+      <!-- ══════════════════════════════════════════════════════════ -->
+      <section id="tab-listItems" class="tab-panel" role="tabpanel" aria-label="List Your Items" hidden>
+        <div class="list-items-wrap">
+          <div class="list-items-header">
+            <p class="eyebrow">Send us your requirements</p>
+            <h2>List Your Items</h2>
+            <p class="section-sub">Type the items you need below and send them to our team. We'll come back to you with availability, pricing, and a quotation — fast.</p>
+          </div>
+
+          <form id="items-form" class="items-form" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="customer-name">Your Name <span aria-hidden="true">*</span></label>
+                <input id="customer-name" type="text" placeholder="e.g. John Dlamini" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="customer-phone">Phone / WhatsApp <span aria-hidden="true">*</span></label>
+                <input id="customer-phone" type="tel" placeholder="e.g. 082 000 0000" required autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="customer-email">Email Address</label>
+                <input id="customer-email" type="email" placeholder="e.g. yourname@email.com" autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="inquiry-type">Request Type</label>
+                <select id="inquiry-type">
+                  <option value="quotation">Price Quotation</option>
+                  <option value="availability">Stock Availability</option>
+                  <option value="order">Place an Order</option>
+                  <option value="bulk">Bulk / Site Order</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="items-list">Items List <span aria-hidden="true">*</span></label>
+              <textarea
+                id="items-list"
+                rows="10"
+                placeholder="List your items here, one per line. Include quantities and sizes where possible. For example:&#10;- 10 bags cement 50kg&#10;- 50 building bricks&#10;- 5L white interior paint&#10;- 1 hacksaw frame&#10;- 4 hinges 75mm"
+                required
+              ></textarea>
+              <p class="form-hint">One item per line. Include quantities and any specific sizes or brands.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="additional-notes">Additional Notes</label>
+              <textarea
+                id="additional-notes"
+                rows="4"
+                placeholder="Any additional information — delivery address, timeline, site location, etc."
+              ></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="button button-dark" id="submit-items-btn">
+                Send to Zowie's Hardware <span>→</span>
+              </button>
+              <button type="button" class="button button-whatsapp open-chat-btn">
+                <span>📱</span> Send via WhatsApp instead
+              </button>
+            </div>
+          </form>
+
+          <!-- Success message (hidden by default) -->
+          <div id="form-success" class="form-success" hidden>
+            <div class="success-icon" aria-hidden="true">✅</div>
+            <h3>Request Sent!</h3>
+            <p>Thank you! Your list has been sent to Zowie's Hardware. Our team will contact you shortly with pricing and availability.</p>
+            <p>Prefer to follow up directly? <a href="tel:+27110001111">Call us</a> or <button class="inline-chat-btn open-chat-btn">chat on WhatsApp</button>.</p>
+            <button class="button button-dark" id="send-another-btn">Send Another List <span>→</span></button>
+          </div>
+
+        </div>
+      </section><!-- /tab-listItems -->
+
+    </main>
+
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  QUANTITY POPUP (modal)                                    -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <div id="qty-popup" class="popup-overlay" role="dialog" aria-modal="true" aria-label="Add to cart" hidden>
+      <div class="popup-box">
+        <button class="popup-close" id="popup-close" aria-label="Close popup">✕</button>
+        <h3 id="popup-product-name">Product Name</h3>
+        <p class="popup-unit-price">Unit price: R<span id="popup-unit-price">0</span>.00</p>
+
+        <div class="qty-controls">
+          <button class="qty-btn" id="qty-minus" aria-label="Decrease quantity">−</button>
+          <input id="qty-input" type="number" min="1" max="999" value="1" aria-label="Quantity" />
+          <button class="qty-btn" id="qty-plus" aria-label="Increase quantity">+</button>
+        </div>
+
+        <p class="popup-total">Total: <strong>R<span id="popup-total">0</span>.00</strong></p>
+
+        <button class="button button-dark popup-add-confirm" id="popup-add-confirm">
+          Add to Cart <span>→</span>
+        </button>
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  CART DRAWER                                               -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <div id="cart-drawer" class="cart-drawer" role="dialog" aria-modal="true" aria-label="Your cart" hidden>
+      <div class="cart-drawer-inner">
+        <div class="cart-drawer-header">
+          <h3>🛒 Your Cart</h3>
+          <button class="cart-close" id="cart-close" aria-label="Close cart">✕</button>
+        </div>
+        <div id="cart-items-list" class="cart-items-list">
+          <!-- items injected by JS -->
+        </div>
+        <div class="cart-footer">
+          <p class="cart-grand-total">Total: <strong>R<span id="cart-grand-total">0</span>.00</strong></p>
+          <button class="button button-whatsapp" id="cart-whatsapp-btn">
+            <span>📱</span> Send Order via WhatsApp
+          </button>
+          <button class="button button-outline" id="cart-clear-btn">Clear Cart</button>
+        </div>
+      </div>
+    </div>
+    <div id="cart-backdrop" class="cart-backdrop" hidden></div>
+
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  WHATSAPP CHAT WIDGET                                      -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <div id="chat-widget" class="chat-widget" aria-label="Chat with us on WhatsApp">
+      <!-- FAB button -->
+      <button class="chat-fab" id="chat-fab" aria-label="Chat with us on WhatsApp" aria-expanded="false">
+        <span class="chat-fab-icon" aria-hidden="true">💬</span>
+        <span class="chat-fab-label">Chat with us</span>
+      </button>
+      <!-- Chat panel -->
+      <div class="chat-panel" id="chat-panel" hidden role="dialog" aria-modal="false" aria-label="WhatsApp Chat">
+        <div class="chat-panel-header">
+          <div class="chat-avatar" aria-hidden="true">Z</div>
+          <div>
+            <strong>Zowie's Hardware</strong>
+            <p>Typically replies within minutes</p>
+          </div>
+          <button class="chat-close-btn" id="chat-close" aria-label="Close chat">✕</button>
+        </div>
+        <div class="chat-panel-body">
+          <div class="chat-bubble">
+            <p>👋 Hi there! Welcome to <strong>Zowie's Hardware</strong>.</p>
+            <p>How can we help you today? Type a message below and we'll connect you to our team on WhatsApp.</p>
+          </div>
+          <div class="chat-quick-replies">
+            <button class="quick-reply" data-msg="Hi! I'd like to check product availability.">Check stock 🔍</button>
+            <button class="quick-reply" data-msg="Hi! I'd like to get a price quotation.">Get a quote 💰</button>
+            <button class="quick-reply" data-msg="Hi! I'd like to place an order.">Place an order 🛒</button>
+            <button class="quick-reply" data-msg="Hi! I have a general enquiry.">General enquiry ❓</button>
+          </div>
+        </div>
+        <div class="chat-panel-footer">
+          <textarea id="chat-message-input" class="chat-input" rows="2" placeholder="Type your message…" aria-label="Chat message"></textarea>
+          <button class="chat-send-btn" id="chat-send" aria-label="Send message on WhatsApp">
+            Send via WhatsApp 📱
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-top">
+        <a class="brand brand-footer" href="#" aria-label="Zowie's Hardware home">
+          <span class="brand-mark">Z</span>
+          <span>ZOWIE'S<small>HARDWARE</small></span>
+        </a>
+        <p>Real products.<br />Real advice.<br />Real community.</p>
+        <a class="text-link footer-back-top" href="#">Back to top <span>↑</span></a>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Zowie's Hardware. All rights reserved.</p>
+        <div>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="#privacy">Privacy</a>
+        </div>
+        <p>Built for your next project.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

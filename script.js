@@ -377,29 +377,98 @@
 
 
   /* ══════════════════════════════════════════════════════════════════════════
-     6. IN-STORE SEARCH & FILTER
+     6. IN-STORE CATALOGUE — render dynamically from catalogue.js
      ══════════════════════════════════════════════════════════════════════════ */
-  const searchInput  = document.getElementById('store-search');
-  const productCards = document.querySelectorAll('.product-card');
-  const noResults    = document.getElementById('store-no-results');
-  const pills        = document.querySelectorAll('.pill');
+  const productGrid = document.getElementById('product-grid');
+  const noResults   = document.getElementById('store-no-results');
+  const pills       = document.querySelectorAll('.pill');
+  const searchInput = document.getElementById('store-search');
 
   let activeFilter = 'all';
   let searchQuery  = '';
 
-  function filterProducts() {
-    let visibleCount = 0;
+  function escHtmlStore(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
 
-    productCards.forEach(card => {
-      const matchCat    = activeFilter === 'all' || card.dataset.category === activeFilter;
-      const matchSearch = !searchQuery || card.dataset.name.toLowerCase().includes(searchQuery);
-      const show = matchCat && matchSearch;
-      card.style.display = show ? '' : 'none';
-      if (show) visibleCount++;
+  function buildProductCard(p) {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.dataset.category = p.category;
+    card.dataset.name = p.name.toLowerCase();
+    card.dataset.id = p.id;
+    card.setAttribute('role', 'listitem');
+
+    const stockBadge = p.inStock
+      ? '<div class="product-badge">In Stock</div>'
+      : '<div class="product-badge" style="background:#e05252">Out of Stock</div>';
+
+    const catLabel = (typeof ZowieCatalogue !== 'undefined')
+      ? ZowieCatalogue.getCategoryLabel(p.category)
+      : p.category;
+
+    card.innerHTML = `
+      ${stockBadge}
+      <div class="product-emoji" aria-hidden="true">${escHtmlStore(p.emoji || '📦')}</div>
+      <div class="product-info">
+        <span class="product-cat">${escHtmlStore(catLabel)}</span>
+        <h3>${escHtmlStore(p.name)}</h3>
+        <p>${escHtmlStore(p.description || '')}</p>
+        <p class="product-price">R<span class="price-value">${Number(p.price).toFixed(0)}</span>.00</p>
+      </div>
+      <button class="add-to-cart-btn"
+        data-name="${escHtmlStore(p.name)}"
+        data-price="${p.price}"
+        ${!p.inStock ? 'disabled style="opacity:.5;cursor:not-allowed"' : ''}
+        aria-label="Add ${escHtmlStore(p.name)} to cart">
+        ${p.inStock ? 'Add to Cart +' : 'Out of Stock'}
+      </button>`;
+
+    // bind add-to-cart
+    if (p.inStock) {
+      const btn = card.querySelector('.add-to-cart-btn');
+      btn?.addEventListener('click', () => openQtyPopup(p.name, p.price, card));
+    }
+
+    return card;
+  }
+
+  function renderStoreCatalogue() {
+    if (!productGrid) return;
+    productGrid.innerHTML = '';
+
+    const products = (typeof ZowieCatalogue !== 'undefined')
+      ? ZowieCatalogue.getAll()
+      : [];
+
+    products.forEach(p => {
+      const card = buildProductCard(p);
+      productGrid.appendChild(card);
     });
 
-    if (noResults) noResults.hidden = visibleCount > 0 || (!searchQuery && activeFilter === 'all');
+    syncTickedCards();
+    filterProducts();
   }
+
+  function filterProducts() {
+    const cards = productGrid ? productGrid.querySelectorAll('.product-card') : [];
+    let visible = 0;
+    cards.forEach(card => {
+      const matchCat    = activeFilter === 'all' || card.dataset.category === activeFilter;
+      const matchSearch = !searchQuery  || card.dataset.name.includes(searchQuery);
+      const show = matchCat && matchSearch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    if (noResults) noResults.hidden = visible > 0 || (!searchQuery && activeFilter === 'all');
+  }
+
+  // Initial render
+  renderStoreCatalogue();
 
   searchInput?.addEventListener('input', () => {
     searchQuery = searchInput.value.trim().toLowerCase();
@@ -413,6 +482,11 @@
       activeFilter = pill.dataset.filter;
       filterProducts();
     });
+  });
+
+  // Re-render if admin updated catalogue while store was open (cross-tab)
+  window.addEventListener('storage', e => {
+    if (e.key === 'zowie-catalogue') renderStoreCatalogue();
   });
 
 

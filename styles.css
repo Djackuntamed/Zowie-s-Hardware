@@ -1055,6 +1055,7 @@ button { font-family: inherit; cursor: pointer; }
   outline: none;
   height: 52px;
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 #qty-input::-webkit-outer-spin-button,
 #qty-input::-webkit-inner-spin-button { -webkit-appearance: none; }

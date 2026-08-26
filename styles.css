@@ -1448,3 +1448,16 @@ footer {
 
   .sun { width: 450px; height: 450px; }
 }
+
+/* ── Admin link in utility bar ───────────────────────────────────────────── */
+.admin-link {
+  color: rgba(255,255,255,.6);
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .08em;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 4px;
+  padding: 3px 9px;
+  transition: color .2s, border-color .2s;
+}
+.admin-link:hover { color: #fff; border-color: rgba(255,255,255,.5); }

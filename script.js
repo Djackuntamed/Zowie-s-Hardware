@@ -349,13 +349,16 @@
 
   // Restore ticked state from saved cart
   function syncTickedCards() {
-    document.querySelectorAll('.product-card').forEach(card => {
+    const cards = productGrid
+      ? productGrid.querySelectorAll('.product-card')
+      : document.querySelectorAll('.product-card');
+    cards.forEach(card => {
       const btn  = card.querySelector('.add-to-cart-btn');
       const name = btn?.dataset.name;
       if (!name) return;
       const inCart = cart.some(i => i.name === name);
       card.classList.toggle('selected', inCart);
-      if (btn) {
+      if (btn && !btn.disabled) {
         btn.textContent = inCart ? '✓ Added' : 'Add to Cart +';
         btn.style.background = inCart ? 'var(--orange)' : '';
         btn.style.color      = inCart ? '#fff' : '';
@@ -364,6 +367,7 @@
   }
 
   // Wire up all "Add to Cart" buttons → open popup
+  // (for static cards if any remain; dynamic cards bind in buildProductCard)
   document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const card  = btn.closest('.product-card');
